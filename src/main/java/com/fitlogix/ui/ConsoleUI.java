@@ -1,10 +1,13 @@
+// @Deprecated – Console-only class, excluded from web build
 package com.fitlogix.ui;
 
-import com.fitlogix.model.*;
+import com.fitlogix.model.User;
+import com.fitlogix.model.Workout;
 import com.fitlogix.service.*;
 import com.fitlogix.dao.*;
 import java.util.*;
 
+@Deprecated
 public class ConsoleUI {
     Scanner sc = new Scanner(System.in);
     FitnessService service;
@@ -64,7 +67,7 @@ public class ConsoleUI {
         System.out.print("User ID → ");
         String id = sc.nextLine();
         ds.findUser(id).ifPresentOrElse(
-                u -> u.workouts.forEach(System.out::println),
+                u -> u.getWorkouts().forEach(System.out::println),
                 () -> System.out.println("User not found ❌"));
     }
 }

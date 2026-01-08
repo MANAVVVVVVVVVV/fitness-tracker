@@ -1,6 +1,6 @@
 package com.fitlogix.dao;
 
-import com.fitlogix.model.*;
+import com.fitlogix.model.User;
 import com.google.gson.*;
 import java.io.*;
 import java.util.*;
@@ -24,7 +24,7 @@ public class DataStore {
     }
 
     public Optional<User> findUser(String id) {
-        return users.stream().filter(u -> u.id.equals(id)).findFirst();
+        return users.stream().filter(u -> u.getId().equals(id)).findFirst();
     }
 
     public void save() {

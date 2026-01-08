@@ -1,0 +1,11 @@
+# Maven
+target/
+
+# Logs
+*.log
+
+# Local DB / JSON
+data.json
+
+# OS
+.DS_Store
